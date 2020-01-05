@@ -1,10 +1,10 @@
-NAME	= Abstractvm
+NAME	= abstractVM
 
 ar		= ar rc
 
-CXX		= g++
+CXX		= g++ -std=c++11 -o $(NAME)
 
-SRCS	= main.cpp\
+SRCS	=   main.cpp\
 			IOperand/IOperand.cpp\
 			IOperand/IOperand.hpp
 
