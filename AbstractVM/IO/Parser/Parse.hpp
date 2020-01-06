@@ -8,8 +8,9 @@ class Parse
 public:
     Parse();
     ~Parse();
-    void getWords();
-    void getSplit();
+    void getWords(string line);
+    void fromInput();
+    void fromFile(const char* argv) const;
 };
 
 #endif

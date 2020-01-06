@@ -2,8 +2,6 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <algorithm>
-#include <iterator>
 #include "Parse.hpp"
 
 using namespace std;
@@ -18,12 +16,38 @@ Parse::~Parse()
     
 };
 
-void Parse::getWords()
+void Parse::fromFile(const char* argv) const
 {
-    string line = "test un deux trois";
-    string arr[4];
+    string ligne;
+    ifstream monFlux(argv);  //Ouverture d'un fichier en lecture
+    if(monFlux){
+        //Lire le fichier et récupérer 
+        while(getline(monFlux, ligne) && (ligne.find("exit") == string::npos)) //Tant qu'on n'est pas à la fin, on lit
+        {
+            std::cout << ligne << endl;
+        }
+        cout << ";;" << endl;
+        cout << "resultFichier" << endl;
+    }
+    else
+    {
+        cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
+    }
+};
+
+void Parse::getWords(string line)
+{
+    string arr[2];
     int i = 0;
-    
+    stringstream ssin(line);
+    while (ssin.good()) {
+        ssin >> arr[i];
+        i++;
+    }
+    for (i = 0; i <= 3; i++) {
+        // Envoyer ensuite tout dans dictionnaire
+        cout << arr[i] << endl;
+    }
 };
 
 // void Parse::getSplit(const std::string& str, Container& cont, char delim = ' ')

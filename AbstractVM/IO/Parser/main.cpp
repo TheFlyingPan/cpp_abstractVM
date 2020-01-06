@@ -4,6 +4,6 @@
 int main()
 {
     Parse swag;
-    swag.getWords();
+    swag.fromInput();
     return 0;
 }
