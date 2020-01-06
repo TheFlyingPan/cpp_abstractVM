@@ -1,52 +1,51 @@
 #include <iostream> 
 #include <stack> 
+#include <map>
 using namespace std; 
 
 //std::map <key_type, data_type, [comparison_function]>
 
-std::map <string, char> grade_list;
-grade_list["John"] = 'A';
+//std::map <string, char> grade_list;
+//grade_list["John"] = 'A';
+//grade_list["Jack"] = 'B';
+//grade_list["Paul"] = 'C';
 // Should be John
-std::cout<<grade_list.begin()->first<<endl;
+//std::cout<<grade_list.begin()->first<<endl;
 // Should be A
-std::cout<<grade_list.begin()->second<<endl;
-
-function_dictionary = {
-        "comments":commentsFunction,
-        "push":pushFunction,
-        "pop":popFunction,
-        "error":errorFunction,
-        "clear":clearFunction,
-        "dup":dupFunction,
-        "swap":swapFunction,
-        "dump":dumpFunction,
-        "assert":assertFunction,
-        "add":addFunction,
-        "sub":subFunction,
-        "mul":mulFunction,
-        "div":divFunction,
-        "mod":modFunction,
-        "load":loadFunction,
-        "store":storeFunction,
-        "print":printFunction,
-        "exit":exitFunction,
-    }
-
-void main(int value){
-    stack <int> s;
-} 
+//std::cout<<grade_list.begin()->second<<endl;
+{
+std::map <string, string> instructionsCmd;
+        instructionsCmd["comments"] = 'commentsFunction';
+        instructionsCmd["push"] = 'pushFunction';
+        instructionsCmd["pop"] = 'popFunction';
+        instructionsCmd["error"] = 'errorFunction';
+        instructionsCmd["clear"] = 'clearFunction';
+        instructionsCmd["dup"] = 'dupFunction';
+        instructionsCmd["swap"] = 'swapFunction';
+        instructionsCmd["dump"] = 'dumpFunction';
+        instructionsCmd["assert"] = 'assertFunction';
+        instructionsCmd["add"] = 'addFunction';
+        instructionsCmd["sub"] = 'subFunction';
+        instructionsCmd["mul"] = 'mulFunction';
+        instructionsCmd["div"] = 'divFunction';
+        instructionsCmd["mod"] = 'modFunction';
+        instructionsCmd["load"] = 'loadFunction';
+        instructionsCmd["store"] = 'storeFunction';
+        instructionsCmd["print"] = 'printFunction';
+        instructionsCmd["exit"] = 'exitFunction';
+};
 
 void commentsFunction(){
     //donothing;
 }
 
 void pushFunction(int value){
-    s.push(value);
+    stack.push(value);
 }
 
 void popFunction{
-    if (!s.empty()) {
-        s.pop();
+    if(!stack.empty()){
+        stack.pop();
     } else {
         //error;
         break;
@@ -59,15 +58,15 @@ void errorFunction{
 }
 
 void clearFunction{
-    s.clear;
+    stack.clear;
 }
 
 void dupFunction{
     //value
-    if(!s.empty()){
+    if(!stack.empty()){
         break;
     } else {
-        s.pop();
+        stack.pop();
     }
 }
 
@@ -77,9 +76,9 @@ void swapFunction{
     //value1 = copy
 }
 void dumpFunction{
-    while (!s.empty()) { 
-        cout << '\t' << s.top(); 
-        s.pop(); 
+    while (!stack.empty()) { 
+        cout << '\t' << stack.top(); 
+        stack.pop(); 
     } 
     cout << '\n';
 }
@@ -89,8 +88,8 @@ void assertFunction{
 }
 
 void addFunction{
-    s.pop();
-    s.pop();
+    stack.pop();
+    stack.pop();
 }
 
 void subFunction{
@@ -118,7 +117,7 @@ void storeFunction{
 }
 
 void printFunction{
-    top = s.top();
+    top = stack.top();
     if (top != null) {
         cout << '\t' << top;
     }
@@ -132,10 +131,16 @@ void exitFunction{
 
 void showstack(stack <int> s) 
 { 
-    while (!s.empty()) 
+    while (!stack.empty()) 
     { 
-        cout << '\t' << s.top(); 
-        s.pop(); 
+        cout << '\t' << stack.top(); 
+        stack.pop(); 
     } 
     cout << '\n'; 
-} 
+}
+
+void main()
+{
+    cout << "ok";
+    stack <int> stack;
+}
