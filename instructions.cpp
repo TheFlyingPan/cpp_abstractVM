@@ -2,6 +2,15 @@
 #include <stack> 
 using namespace std; 
 
+//std::map <key_type, data_type, [comparison_function]>
+
+std::map <string, char> grade_list;
+grade_list["John"] = 'A';
+// Should be John
+std::cout<<grade_list.begin()->first<<endl;
+// Should be A
+std::cout<<grade_list.begin()->second<<endl;
+
 function_dictionary = {
         "comments":commentsFunction,
         "push":pushFunction,
