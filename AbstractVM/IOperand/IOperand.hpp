@@ -1,5 +1,9 @@
 #include <iostream>
 #include <string>
+#include "eOperandType.hpp"
+
+#ifndef __IOperand_HPP__
+#define __IOperand_HPP__
 
 using namespace std;
 
@@ -12,14 +16,14 @@ public:
     virtual IOperand* operator+( const IOperand& rhs ) const = 0; // sum
     virtual IOperand* operator-( const IOperand& rhs ) const = 0; // difference
     virtual IOperand* operator*( const IOperand& rhs ) const = 0; // product
-    virtual IOperand* operator/( const IOperand& rhs ) const = 0; // quotient
-    virtual IOperand* operator%( const IOperand& rhs ) const = 0; // modulo
+    virtual IOperand* operatorDiv( const IOperand& rhs ) const = 0; // quotient
+    virtual IOperand* operatorMod( const IOperand& rhs ) const = 0; // modulo
     
     virtual ~IOperand() {}
+private:
+    eOperandType _type;
+    string _value;
 };
 
-class eOperandType
-{
-public:
-    virtual eOperandType getType();
-};
+#endif
+
