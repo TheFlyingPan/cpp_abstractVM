@@ -3,6 +3,8 @@
 #include <map>
 using namespace std; 
 
+//my stack is called heap
+
 //std::map <key_type, data_type, [comparison_function]>
 
 //std::map <string, char> grade_list;
@@ -19,35 +21,30 @@ void commentsFunction(){
     //donothing;
 }
 
-void pushFunction(stack <int> stack, int value){
-    stack.push(value);
+void pushFunction(stack <int> heap, int value){
+    heap.push(value);
 }
 
-void popFunction(stack <int> stack)){
-    if(!stack.empty()){
-        stack.pop();
-    } else {
-        //error;
-        break;
+void popFunction(stack <int> heap){
+    if(!heap.empty()){
+        heap.pop();
     }
 }
 
 void errorFunction(){
     cout << "error";
-    break;
 }
 
-void clearFunction(stack <int> stack){
-    stack.clear;
+void clearFunction(stack <int> heap){
+    //heap.clear;
 }
 
-void dupFunction(stack <int> stack){
+void dupFunction(stack <int> heap){
     //value
-    if(!stack.empty()){
-        break;
-    } else {
-        stack.pop();
+    if(!heap.empty()){
+        heap.pop();
     }
+
 }
 
 void swapFunction(){
@@ -55,10 +52,10 @@ void swapFunction(){
     //value2 = value1
     //value1 = copy
 }
-void dumpFunction(stack <int> stack){
-    while (!stack.empty()) { 
-        cout << '\t' << stack.top(); 
-        stack.pop(); 
+void dumpFunction(stack <int> heap){
+    while (!heap.empty()) { 
+        cout << '\t' << heap.top(); 
+        heap.pop(); 
     } 
     cout << '\n';
 }
@@ -67,9 +64,9 @@ void assertFunction(){
 
 }
 
-void addFunction(stack <int> stack){
-    stack.pop();
-    stack.pop();
+void addFunction(stack <int> heap){
+    heap.pop();
+    heap.pop();
 }
 
 void subFunction(){
@@ -92,37 +89,43 @@ void loadFunction(){
 
 }
 
-void storeFunction(stack <int> stack){
+void storeFunction(stack <int> heap){
 
 }
 
-void printFunction(stack <int> stack){
-    top = stack.top();
-    if (top != null) {
+void printFunction(stack <int> heap){
+    int top = heap.top();
+    if (top != NULL) {
         cout << '\t' << top;
     }
-    showstack(stack);
+    showstack(heap);
 }
 
-void exitFunction(stack <int> stack){
+void exitFunction(stack <int> heap){
     //kill program
     //break;
 }
 
-void showstack(stack <int> stack) 
+void showstack(stack <int> heap) 
 { 
-    while (!stack.empty()) 
+    while (!heap.empty()) 
     { 
-        cout << '\t' << stack.top(); 
-        stack.pop(); 
+        cout << '\t' << heap.top(); 
+        heap.pop(); 
     } 
     cout << '\n'; 
 }
 
-void main(stack <int> stack, string input)
+void main(stack <int> heap, string input)
 {
+    if(!heap.empty()){
+        cout << "heap is empty";
+    }
 
-std::map <string, string> instructionsCmd;
+
+
+
+    std::map <string, string> instructionsCmd;
         instructionsCmd["comments"] = 'commentsFunction';
         instructionsCmd["push"] = 'pushFunction';
         instructionsCmd["pop"] = 'popFunction';
@@ -144,5 +147,5 @@ std::map <string, string> instructionsCmd;
 
 
     cout << "ok";
-    stack <int> stack;
+    stack <int> heap;
 }
