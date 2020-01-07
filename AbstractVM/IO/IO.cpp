@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include "IO.hpp"
-#include "Parser/Parser.cpp"
 
 using namespace std;
 
@@ -25,7 +24,6 @@ void IO::fromFile(const char* argv) const
         while(getline(monFlux, ligne) && (ligne.find("exit") == string::npos)) //Tant qu'on n'est pas à la fin, on lit
         {
             std::cout << ligne << endl;
-            Parse::getWords(ligne);
         }
         cout << ";;" << endl;
         cout << "resultFichier" << endl;
