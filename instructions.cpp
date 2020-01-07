@@ -40,7 +40,7 @@ void clearFunction(stack <int> heap){
 }
 
 void dupFunction(stack <int> heap){
-    //value
+    //value chack
     if(!heap.empty()){
         heap.pop();
     }
@@ -119,11 +119,10 @@ void showstack(stack <int> heap)
 void main(stack <int> heap, string input)
 {
     if(!heap.empty()){
-        cout << "heap is empty";
+        cout << "heap is not empty";
+        cout << heap.top() << endl;
     }
-
-
-
+    
 
     std::map <string, string> instructionsCmd;
         instructionsCmd["comments"] = 'commentsFunction';
@@ -146,6 +145,6 @@ void main(stack <int> heap, string input)
         instructionsCmd["exit"] = 'exitFunction';
 
 
-    cout << "ok";
+    cout << "ok cmd";
     stack <int> heap;
 }
