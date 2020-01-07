@@ -25,6 +25,7 @@ void Parse::fromFile(const char* argv) const
         while(getline(monFlux, ligne) && (ligne.find("exit") == string::npos)) //Tant qu'on n'est pas à la fin, on lit
         {
             std::cout << ligne << endl;
+            Parse::getWords(ligne);
         }
         cout << ";;" << endl;
         cout << "resultFichier" << endl;
@@ -35,7 +36,7 @@ void Parse::fromFile(const char* argv) const
     }
 };
 
-void Parse::getWords(string line)
+void Parse::getWords(string line) const
 {
     string arr[2];
     int i = 0;
@@ -44,20 +45,9 @@ void Parse::getWords(string line)
         ssin >> arr[i];
         i++;
     }
-    for (i = 0; i <= 3; i++) {
-        // Envoyer ensuite tout dans dictionnaire
-        cout << arr[i] << endl;
+    // Il va falloir implementer le dico
+    if (arr[0] == "cul") {
+        // le arr[1] doit etre envoyé dans la memoire en fonction de la commande
+        cout << "Ca marche " << arr[1] << endl;
     }
 };
-
-// void Parse::getSplit(const std::string& str, Container& cont, char delim = ' ')
-// {
-//     size_t current, previous = 0;
-//     current = str.find(delim);
-//     while (current != string::npos) {
-//         cont.push_back(str.substr(previous, current - previous));
-//         previous = current + 1;
-//         current = str.find(delim, previous);
-//     }
-//     cont.push_back(substr(previous, current - previous));
-// };

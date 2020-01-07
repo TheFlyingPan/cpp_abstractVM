@@ -1,9 +1,9 @@
 #include "Parse.cpp"
 #include <iostream>
 
-int main()
+int main(int argc, char** argv)
 {
     Parse swag;
-    swag.fromInput();
+    swag.fromFile(argv[1]);
     return 0;
 }
