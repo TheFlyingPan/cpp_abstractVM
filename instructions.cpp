@@ -1,7 +1,9 @@
 #include <stack> 
 #include <iostream> 
 #include <map>
-using namespace std; 
+using namespace std;
+
+//#include "dictionnary.cpp"
 
 //my stack is called heap
 //dictionnary called fromm dictionnary.cpp
@@ -128,7 +130,7 @@ stack<int> initStack(stack<int> heap){
     return heap;
 }
 
-int main()
+int main(int argc, char** argv)
 {
     stack<int> heap;
     //heap.push(4);

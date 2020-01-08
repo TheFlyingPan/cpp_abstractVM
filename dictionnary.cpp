@@ -5,6 +5,7 @@ using namespace std;
 
 //std::map <key_type, data_type, [comparison_function]>
 
+//Template A - not working
 //std::map <string, char> grade_list;
 //grade_list["John"] = 'A';
 //grade_list["Jack"] = 'B';
@@ -14,6 +15,7 @@ using namespace std;
 // Should be A
 //std::cout<<grade_list.begin()->second<<endl;
 
+//TEMPLATE B - working
 /* map <string, string> instructionsCmd = {
             {"a", "1"},
             {"b", "2"},
@@ -42,7 +44,8 @@ int main(void){
         {"exit", "exitFunction"},
         };
 
-cout << "Map contains following elements" << endl;
+    //READ MAP
+    cout << "Map contains following elements" << endl;
 
    for (auto it = instructionsCmd.begin(); it != instructionsCmd.end(); ++it)
       cout << it->first << " = " << it->second << endl;
