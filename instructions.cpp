@@ -1,53 +1,56 @@
-#include <iostream> 
 #include <stack> 
+#include <iostream> 
 #include <map>
 using namespace std; 
 
-//std::map <key_type, data_type, [comparison_function]>
+//my stack is called heap
+//dictionnary called fromm dictionnary.cpp
 
-//std::map <string, char> grade_list;
-//grade_list["John"] = 'A';
-//grade_list["Jack"] = 'B';
-//grade_list["Paul"] = 'C';
-// Should be John
-//std::cout<<grade_list.begin()->first<<endl;
-// Should be A
-//std::cout<<grade_list.begin()->second<<endl;
+/* int main()
+{
+    stack<int> pile;    //Une pile vide
+    pile.push(3);       //On ajoute le nombre 3 à la pile
+    pile.push(4);
+    pile.push(5);
 
+    cout << pile.top() << endl; //On consulte le sommet de la pile (le nombre 5)
+ 
+    pile.pop();        //On supprime le dernier élément ajouté (le nombre 5)
+
+    cout << pile.top() << endl; //On consulte le sommet de la pile (le nombre 4)
+
+    return 0;
+}
+ */
 
 void commentsFunction(){
     //donothing;
 }
 
-void pushFunction(stack <int> stack, int value){
-    stack.push(value);
+void pushFunction(stack <int> heap, int value){
+    heap.push(value);
 }
 
-void popFunction(stack <int> stack)){
-    if(!stack.empty()){
-        stack.pop();
-    } else {
-        //error;
-        break;
+void popFunction(stack <int> heap){
+    if(!heap.empty()){
+        heap.pop();
     }
 }
 
 void errorFunction(){
     cout << "error";
-    break;
 }
 
-void clearFunction(stack <int> stack){
-    stack.clear;
+void clearFunction(stack <int> heap){
+    //heap.clear;
 }
 
-void dupFunction(stack <int> stack){
-    //value
-    if(!stack.empty()){
-        break;
-    } else {
-        stack.pop();
+void dupFunction(stack <int> heap){
+    //value chack
+    if(!heap.empty()){
+        heap.pop();
     }
+
 }
 
 void swapFunction(){
@@ -55,10 +58,10 @@ void swapFunction(){
     //value2 = value1
     //value1 = copy
 }
-void dumpFunction(stack <int> stack){
-    while (!stack.empty()) { 
-        cout << '\t' << stack.top(); 
-        stack.pop(); 
+void dumpFunction(stack <int> heap){
+    while (!heap.empty()) { 
+        cout << '\t' << heap.top(); 
+        heap.pop(); 
     } 
     cout << '\n';
 }
@@ -67,9 +70,9 @@ void assertFunction(){
 
 }
 
-void addFunction(stack <int> stack){
-    stack.pop();
-    stack.pop();
+void addFunction(stack <int> heap){
+    heap.pop();
+    heap.pop();
 }
 
 void subFunction(){
@@ -92,57 +95,47 @@ void loadFunction(){
 
 }
 
-void storeFunction(stack <int> stack){
+void storeFunction(stack <int> heap){
 
 }
 
-void printFunction(stack <int> stack){
-    top = stack.top();
-    if (top != null) {
-        cout << '\t' << top;
-    }
-    showstack(stack);
+void printFunction(stack <int> heap){
+    //int top = heap.top();
+    //if (top != NULL) {
+    //    cout << '\t' << top;
+    //}
+    //showstack(heap);
 }
 
-void exitFunction(stack <int> stack){
+void exitFunction(stack <int> heap){
     //kill program
     //break;
 }
 
-void showstack(stack <int> stack) 
+void showstack(stack <int> heap) 
 { 
-    while (!stack.empty()) 
+    while (!heap.empty()) 
     { 
-        cout << '\t' << stack.top(); 
-        stack.pop(); 
+        cout << '\t' << heap.top(); 
+        heap.pop();
     } 
-    cout << '\n'; 
+    cout << '\n';
 }
 
-void main(stack <int> stack, string input)
+void initstack(stack<int> heap){
+    heap.push(1);
+}
+
+int main(stack<int> heap, string input)
 {
-
-std::map <string, string> instructionsCmd;
-        instructionsCmd["comments"] = 'commentsFunction';
-        instructionsCmd["push"] = 'pushFunction';
-        instructionsCmd["pop"] = 'popFunction';
-        instructionsCmd["error"] = 'errorFunction';
-        instructionsCmd["clear"] = 'clearFunction';
-        instructionsCmd["dup"] = 'dupFunction';
-        instructionsCmd["swap"] = 'swapFunction';
-        instructionsCmd["dump"] = 'dumpFunction';
-        instructionsCmd["assert"] = 'assertFunction';
-        instructionsCmd["add"] = 'addFunction';
-        instructionsCmd["sub"] = 'subFunction';
-        instructionsCmd["mul"] = 'mulFunction';
-        instructionsCmd["div"] = 'divFunction';
-        instructionsCmd["mod"] = 'modFunction';
-        instructionsCmd["load"] = 'loadFunction';
-        instructionsCmd["store"] = 'storeFunction';
-        instructionsCmd["print"] = 'printFunction';
-        instructionsCmd["exit"] = 'exitFunction';
+    initstack(heap);
+    if(!heap.empty()){
+        cout << "heap is not empty";
+        cout << heap.top() << endl;
+    }
+    
 
 
-    cout << "ok";
-    stack <int> stack;
+    cout << "ok cmd";
+    return(0);
 }
