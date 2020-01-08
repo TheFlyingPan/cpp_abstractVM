@@ -23,6 +23,7 @@ using namespace std;
 }
  */
 
+
 void commentsFunction(){
     //donothing;
 }
@@ -122,20 +123,24 @@ void showstack(stack <int> heap)
     cout << '\n';
 }
 
-void initstack(stack<int> heap){
+stack<int> initStack(stack<int> heap){
     heap.push(1);
+    return heap;
 }
 
-int main(stack<int> heap, string input)
+int main()
 {
-    initstack(heap);
+    stack<int> heap;
+    //heap.push(4);
+    //heap.push(5);
+    initStack(heap);
     if(!heap.empty()){
-        cout << "heap is not empty";
+        cout << "heap is not empty\n";
         cout << heap.top() << endl;
+    }else if(heap.empty()){
+        cout << "heap is empty\n";
     }
     
-
-
-    cout << "ok cmd";
+    cout << "ok cmd\n";
     return(0);
 }

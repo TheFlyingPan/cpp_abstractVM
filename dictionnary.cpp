@@ -13,7 +13,7 @@ using namespace std;
 //std::cout<<grade_list.begin()->second<<endl;
 
 main(){
-std::map <string, string> instructionsCmd;
+std::map <char, char> instructionsCmd;
         instructionsCmd["comments"] = 'commentsFunction';
         instructionsCmd["push"] = 'pushFunction';
         instructionsCmd["pop"] = 'popFunction';
