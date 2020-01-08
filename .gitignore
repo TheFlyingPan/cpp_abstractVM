@@ -6,5 +6,6 @@ tasks.json
 settings.json
 AbstractVM/Chipset/test
 AbstractVM/Chipset/main.cpp
+AbstractVM/Chipset/a.exe
 AbstractVM/IO/Parser_OLD
-
+a.out
