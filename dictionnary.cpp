@@ -1,4 +1,6 @@
 #include <map>
+#include <string>
+#include <iostream>
 using namespace std; 
 
 //std::map <key_type, data_type, [comparison_function]>
@@ -12,24 +14,38 @@ using namespace std;
 // Should be A
 //std::cout<<grade_list.begin()->second<<endl;
 
-main(){
-std::map <char, char> instructionsCmd;
-        instructionsCmd["comments"] = 'commentsFunction';
-        instructionsCmd["push"] = 'pushFunction';
-        instructionsCmd["pop"] = 'popFunction';
-        instructionsCmd["error"] = 'errorFunction';
-        instructionsCmd["clear"] = 'clearFunction';
-        instructionsCmd["dup"] = 'dupFunction';
-        instructionsCmd["swap"] = 'swapFunction';
-        instructionsCmd["dump"] = 'dumpFunction';
-        instructionsCmd["assert"] = 'assertFunction';
-        instructionsCmd["add"] = 'addFunction';
-        instructionsCmd["sub"] = 'subFunction';
-        instructionsCmd["mul"] = 'mulFunction';
-        instructionsCmd["div"] = 'divFunction';
-        instructionsCmd["mod"] = 'modFunction';
-        instructionsCmd["load"] = 'loadFunction';
-        instructionsCmd["store"] = 'storeFunction';
-        instructionsCmd["print"] = 'printFunction';
-        instructionsCmd["exit"] = 'exitFunction';
+/* map <string, string> instructionsCmd = {
+            {"a", "1"},
+            {"b", "2"},
+            {"c", "3"},
+            }; */
+
+int main(void){
+    map <string, string> instructionsCmd = {
+        {"comments", "commentsFunction"},
+        {"push", "pushFunction"},
+        {"pop", "popFunction"},
+        {"error", "errorFunction"},
+        {"clear", "clearFunction"},
+        {"dup", "dupFunction"},
+        {"swap", "swapFunction"},
+        {"dump", "dumpFunction"},
+        {"assert", "assertFunction"},
+        {"add", "addFunction"},
+        {"sub", "subFunction"},
+        {"mul", "mulFunction"},
+        {"div", "divFunction"},
+        {"mod", "modFunction"},
+        {"load", "loadFunction"},
+        {"store", "storeFunction"},
+        {"print", "printFunction"},
+        {"exit", "exitFunction"},
+        };
+
+cout << "Map contains following elements" << endl;
+
+   for (auto it = instructionsCmd.begin(); it != instructionsCmd.end(); ++it)
+      cout << it->first << " = " << it->second << endl;
+
+    return 0;
 }
