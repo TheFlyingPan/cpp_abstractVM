@@ -1,9 +1,9 @@
 #ifndef __IO_HPP__
 #define __IO_HPP__
-
+#include "../Chipset/Chipset.cpp"
 using namespace std;
 
-class IO
+class IO : public Chipset
 {
 private:
     const map<const string, const string> mDict = {
@@ -26,12 +26,13 @@ private:
         {"print", "printFunction"},
         {"exit", "exitFunction"}
         };
-    const map<const string, const string>::iterator iter;
 public:
     IO();
-    ~IO();
+
     void fromFile(const char* argv) const;
     void fromInput() const;
+
+    virtual ~IO();
 };
 
 #endif

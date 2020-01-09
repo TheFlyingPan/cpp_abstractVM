@@ -2,18 +2,22 @@
 #include <iostream> 
 #include <map>
 #include "instructions.hpp"
+
 using namespace std;
 
 instructions::instructions()
 {
+    //do nothing
 }
 
 instructions::~instructions()
 {
+    //do nothing
 }
 
-void commentsFunction(){
-    //donothing;
+void commentsFunction()
+{
+    //do nothing;
 }
 
 void pushFunction(stack <int> heap, int value){
@@ -114,21 +118,4 @@ void showstack(stack <int> heap)
 stack<int> initStack(stack<int> heap){
     heap.push(1);
     return heap;
-}
-
-int main(int argc, char** argv)
-{
-    stack<int> heap;
-    //heap.push(4);
-    //heap.push(5);
-    initStack(heap);
-    if(!heap.empty()){
-        cout << "heap is not empty\n";
-        cout << heap.top() << endl;
-    }else if(heap.empty()){
-        cout << "heap is empty\n";
-    }
-    
-    cout << "ok cmd\n";
-    return(0);
 }

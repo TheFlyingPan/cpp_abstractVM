@@ -1,9 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <map>
 #include "IO.hpp"
-#include "../Memory/instructions.hpp"
+#include "../Chipset/Chipset.hpp"
 
 using namespace std;
 
@@ -27,7 +28,7 @@ void IO::fromFile(const char* argv) const
         {
             std::cout << ligne << endl;
             if (mDict.find(ligne) == mDict.end()) {
-                //not found
+                std::cout << "not found" << endl;
             }
             else
             {
@@ -50,12 +51,13 @@ void IO::fromInput() const
     string ligne;
     while(ligne.find("exit") == string::npos){
         getline(cin, ligne);
-        if (mDict.find(ligne) == mDict.end()) {
-                //not found
+        string it = Chipset::getWords(ligne);
+        if (mDict.find(it) == mDict.end()) {
+                std::cout << "not found" << endl;
             }
             else
             {
-                //found
+                std::cout << "found: " << it << endl;
             }
     }
     cout << ";;" << endl;

@@ -2,9 +2,9 @@
 #include <string>
 #include <fstream>
 #include "AbstractVM/IOperand/IOperand.hpp"
-#include "AbstractVM/IO/IO.cpp"
 #include "AbstractVM/Memory/instructions.hpp"
-#include "AbstractVM/Memory/dictionnary.hpp"
+#include "AbstractVM/IO/IO.cpp"
+
 
 using namespace std;
 
@@ -26,4 +26,4 @@ int main(int argc, char** argv)
         }
     }
     return 0;
-}
+};

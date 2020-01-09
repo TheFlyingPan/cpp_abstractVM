@@ -8,9 +8,8 @@ class Chipset
 public:
     Chipset();
     ~Chipset();
-    void getWords(string line) const;
-    void fromFile(const char* argv) const;
-    void getVar(string line) const;
+    static string getWords(string ligne);
+    static string getVar(string ligne);
 };
 
 #endif
