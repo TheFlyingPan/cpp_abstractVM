@@ -1,13 +1,15 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <map>
 #include "IO.hpp"
+#include "../Memory/instructions.hpp"
 
 using namespace std;
 
 IO::IO()
-{
-    //nothing
+{ 
+    this->mDict;
 };
 
 IO::~IO()
@@ -24,6 +26,13 @@ void IO::fromFile(const char* argv) const
         while(getline(monFlux, ligne) && (ligne.find("exit") == string::npos)) //Tant qu'on n'est pas à la fin, on lit
         {
             std::cout << ligne << endl;
+            if (mDict.find(ligne) == mDict.end()) {
+                //not found
+            }
+            else
+            {
+                //found
+            }
         }
         cout << ";;" << endl;
         cout << "resultFichier" << endl;
@@ -41,6 +50,13 @@ void IO::fromInput() const
     string ligne;
     while(ligne.find("exit") == string::npos){
         cin >> ligne;
+        if (mDict.find(ligne) == mDict.end()) {
+                //not found
+            }
+            else
+            {
+                //found
+            }
     }
     cout << ";;" << endl;
     cout << "result" << endl;

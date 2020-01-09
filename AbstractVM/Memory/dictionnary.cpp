@@ -5,7 +5,7 @@
 using namespace std; 
 
 dictionnary::dictionnary(){
-    map <string, string> instructionsCmd = {
+    map<string, string> instructionsCmd = {
         {"comments", "commentsFunction"},
         {"push", "pushFunction"},
         {"pop", "popFunction"},
@@ -23,14 +23,14 @@ dictionnary::dictionnary(){
         {"load", "loadFunction"},
         {"store", "storeFunction"},
         {"print", "printFunction"},
-        {"exit", "exitFunction"},
+        {"exit", "exitFunction"}
         };
 
-    //READ MAP
-    cout << "Map contains following elements" << endl;
+//     //READ MAP
+//     cout << "Map contains following elements" << endl;
 
-   for (auto it = instructionsCmd.begin(); it != instructionsCmd.end(); ++it)
-      cout << it->first << " = " << it->second << endl;
+//    for (auto it = instructionsCmd.begin(); it != instructionsCmd.end(); ++it)
+//       cout << it->first << " = " << it->second << endl;
 }
 
 dictionnary::~dictionnary()

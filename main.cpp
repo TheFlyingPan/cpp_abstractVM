@@ -3,6 +3,8 @@
 #include <fstream>
 #include "AbstractVM/IOperand/IOperand.hpp"
 #include "AbstractVM/IO/IO.cpp"
+#include "AbstractVM/Memory/instructions.hpp"
+#include "AbstractVM/Memory/dictionnary.hpp"
 
 using namespace std;
 

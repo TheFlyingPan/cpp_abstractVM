@@ -8,7 +8,7 @@ class instructions
 private:
     /* data */
 public:
-    instructions(/* args */);
+    instructions();
     ~instructions();
     void commentsFunction();
     void pushFunction();

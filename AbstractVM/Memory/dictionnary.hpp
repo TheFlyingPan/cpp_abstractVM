@@ -8,7 +8,7 @@ class dictionnary
 private:
     /* data */
 public:
-    dictionnary(/* args */);
+    dictionnary();
     ~dictionnary();
 };
 

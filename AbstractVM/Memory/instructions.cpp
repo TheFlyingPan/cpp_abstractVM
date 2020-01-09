@@ -4,7 +4,7 @@
 #include "instructions.hpp"
 using namespace std;
 
-instructions::instructions(/* args */)
+instructions::instructions()
 {
 }
 
