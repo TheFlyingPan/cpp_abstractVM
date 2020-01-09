@@ -3,7 +3,7 @@
 #include "../Chipset/Chipset.cpp"
 using namespace std;
 
-class IO : public Chipset
+class IO
 {
 private:
     const map<const string, const string> mDict = {
