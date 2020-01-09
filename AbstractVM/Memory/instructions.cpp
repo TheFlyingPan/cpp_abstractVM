@@ -1,27 +1,16 @@
 #include <stack> 
 #include <iostream> 
 #include <map>
-using namespace std; 
+#include "instructions.hpp"
+using namespace std;
 
-//my stack is called heap
-//dictionnary called fromm dictionnary.cpp
-
-/* int main()
+instructions::instructions(/* args */)
 {
-    stack<int> pile;    //Une pile vide
-    pile.push(3);       //On ajoute le nombre 3 à la pile
-    pile.push(4);
-    pile.push(5);
-
-    cout << pile.top() << endl; //On consulte le sommet de la pile (le nombre 5)
- 
-    pile.pop();        //On supprime le dernier élément ajouté (le nombre 5)
-
-    cout << pile.top() << endl; //On consulte le sommet de la pile (le nombre 4)
-
-    return 0;
 }
- */
+
+instructions::~instructions()
+{
+}
 
 void commentsFunction(){
     //donothing;
@@ -122,20 +111,24 @@ void showstack(stack <int> heap)
     cout << '\n';
 }
 
-void initstack(stack<int> heap){
+stack<int> initStack(stack<int> heap){
     heap.push(1);
+    return heap;
 }
 
-int main(stack<int> heap, string input)
+int main(int argc, char** argv)
 {
-    initstack(heap);
+    stack<int> heap;
+    //heap.push(4);
+    //heap.push(5);
+    initStack(heap);
     if(!heap.empty()){
-        cout << "heap is not empty";
+        cout << "heap is not empty\n";
         cout << heap.top() << endl;
+    }else if(heap.empty()){
+        cout << "heap is empty\n";
     }
     
-
-
-    cout << "ok cmd";
+    cout << "ok cmd\n";
     return(0);
 }
