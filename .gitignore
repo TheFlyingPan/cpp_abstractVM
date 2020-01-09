@@ -4,7 +4,18 @@
 launch.json
 tasks.json
 settings.json
+AbstractVM/Chipset/test
+AbstractVM/Chipset/main.cpp
+AbstractVM/Chipset/a.exe
+AbstractVM/IO/Parser_OLD
+a.out
+<<<<<<< HEAD
+abstractVM.exe
+test.txt
+test2.txt
+=======
 a.out
 abstractVM.exe
 test.txt
 test2.txt
+>>>>>>> 5173fc1cfc30657f9b65d3c175a43235bfedaae6

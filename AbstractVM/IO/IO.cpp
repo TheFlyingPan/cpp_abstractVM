@@ -49,7 +49,7 @@ void IO::fromInput() const
             //A RAJOUTER DANS CLASSE I/O
     string ligne;
     while(ligne.find("exit") == string::npos){
-        cin >> ligne;
+        getline(cin, ligne);
         if (mDict.find(ligne) == mDict.end()) {
                 //not found
             }

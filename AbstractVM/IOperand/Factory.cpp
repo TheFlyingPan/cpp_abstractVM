@@ -36,5 +36,5 @@ static IOperand* createOperand(eOperandType type, const string& value)
     {
         IOperand* createBigDecimal(const string& value);
     }
-
+    return 0;
 };
