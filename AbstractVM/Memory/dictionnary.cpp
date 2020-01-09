@@ -1,28 +1,10 @@
 #include <map>
 #include <string>
 #include <iostream>
+#include "dictionnary.hpp"
 using namespace std; 
 
-//std::map <key_type, data_type, [comparison_function]>
-
-//Template A - not working
-//std::map <string, char> grade_list;
-//grade_list["John"] = 'A';
-//grade_list["Jack"] = 'B';
-//grade_list["Paul"] = 'C';
-// Should be John
-//std::cout<<grade_list.begin()->first<<endl;
-// Should be A
-//std::cout<<grade_list.begin()->second<<endl;
-
-//TEMPLATE B - working
-/* map <string, string> instructionsCmd = {
-            {"a", "1"},
-            {"b", "2"},
-            {"c", "3"},
-            }; */
-
-int main(void){
+dictionnary::dictionnary(){
     map <string, string> instructionsCmd = {
         {"comments", "commentsFunction"},
         {"push", "pushFunction"},
@@ -49,6 +31,8 @@ int main(void){
 
    for (auto it = instructionsCmd.begin(); it != instructionsCmd.end(); ++it)
       cout << it->first << " = " << it->second << endl;
+}
 
-    return 0;
+dictionnary::~dictionnary()
+{
 }
