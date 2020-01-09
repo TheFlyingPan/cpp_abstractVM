@@ -39,8 +39,8 @@ void IO::fromInput() const
      //lire le programme et récupérer ligne via cmd
             //A RAJOUTER DANS CLASSE I/O
     string ligne;
-    while(ligne.find("exit") == string::npos){
-        cin >> ligne;
+    while(ligne.find("exit") == string::npos) {
+        getline(cin, ligne);
     }
     cout << ";;" << endl;
     cout << "result" << endl;

@@ -34,5 +34,4 @@ dictionnary::dictionnary(){
 }
 
 dictionnary::~dictionnary()
-{
-}
+{}
