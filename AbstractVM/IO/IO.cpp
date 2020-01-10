@@ -15,13 +15,13 @@ IO::IO()
 
 IO::~IO()
 {
-    //nothing
+    // nothing
 };
 
 void IO::fromFile(const char* argv) const
 {
     string ligne;
-    ifstream monFlux(argv);  //Ouverture d'un fichier en lecture
+    ifstream monFlux(argv);  // Ouverture d'un fichier en lecture
     if(monFlux){
         //Lire le fichier et récupérer 
         while(getline(monFlux, ligne) && (ligne.find("exit") == string::npos)) //Tant qu'on n'est pas à la fin, on lit
