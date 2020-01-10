@@ -27,12 +27,13 @@ void IO::fromFile(const char* argv) const
         while(getline(monFlux, ligne) && (ligne.find("exit") == string::npos)) //Tant qu'on n'est pas à la fin, on lit
         {
             std::cout << ligne << endl;
-            if (mDict.find(ligne) == mDict.end()) {
+            string it = Chipset::getWords(ligne);
+            if (mDict.find(it) == mDict.end()) {
                 std::cout << "not found" << endl;
             }
             else
             {
-                //found
+                std::cout << "found: " << it << endl;
             }
         }
         cout << ";;" << endl;
