@@ -5,9 +5,8 @@ using namespace std;
 
 class Chipset
 {
-public:
     Chipset();
-    ~Chipset();
+public:
     static string getWords(string ligne);
     static string getVar(string ligne);
 };

@@ -1,31 +1,18 @@
 #ifndef __IO_HPP__
 #define __IO_HPP__
 #include "../Chipset/Chipset.cpp"
+#include <map>
+#include <string>
+#include <iostream>
 using namespace std;
 
 class IO
 {
 private:
-    const map<const string, const string> mDict = {
-        {"comments", "commentsFunction"},
-        {"push", "pushFunction"},
-        {"pop", "popFunction"},
-        {"error", "errorFunction"},
-        {"clear", "clearFunction"},
-        {"dup", "dupFunction"},
-        {"swap", "swapFunction"},
-        {"dump", "dumpFunction"},
-        {"assert", "assertFunction"},
-        {"add", "addFunction"},
-        {"sub", "subFunction"},
-        {"mul", "mulFunction"},
-        {"div", "divFunction"},
-        {"mod", "modFunction"},
-        {"load", "loadFunction"},
-        {"store", "storeFunction"},
-        {"print", "printFunction"},
-        {"exit", "exitFunction"}
-        };
+    // typedef void (*voidfunc)();
+    map<const string, voidfunc> mDict;
+    //     mDict["push"] = (voidfunc) &(Instruction);
+    //     mDict["comment"] = (voidfunc) &bar;
 public:
     IO();
 

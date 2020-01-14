@@ -1,12 +1,12 @@
 #include "IOperand.hpp"
 
  string IOperand::toString() const // string that represents the instance
- {
+{
     return _value;
- };
+};
 
 eOperandType IOperand::getType() const
-{   
+{
     return _type;
 };
 

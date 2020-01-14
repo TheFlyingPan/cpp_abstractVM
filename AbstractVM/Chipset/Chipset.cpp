@@ -39,4 +39,5 @@ string Chipset::getVar(string ligne)
     string str = token2.substr(0, token2.size()-1);
     cout << token << endl; // Type de la variable
     cout << str << endl; // Contenu de la variable
+    return "salut";
 }

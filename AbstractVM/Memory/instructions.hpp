@@ -1,3 +1,5 @@
+#ifndef __INSTRUCTIONS_HPP__
+#define __INSTRUCTIONS_HPP__
 #include <stack> 
 #include <iostream> 
 #include <map>
@@ -9,27 +11,9 @@ class instructions
 private:
     /* data */
 public:
-    instructions();
-    ~instructions();
+    instructions::instructions();
+    instructions::~instructions();
     void commentsFunction();
-    void pushFunction();
-    void popFunction();
-    void errorFunction();
-    void clearFunction();
-    void dupFunction();
-    void swapFunction();
-    void dumpFunction();
-    void assertFunction();
-    void addFunction();
-    void subFunction();
-    void mulFunction();
-    void divFunction();
-    void modFunction();
-    void loadFunction();
-    void storeFunction();
-    void printFunction();
-    void exitFunction();
-    void showstack();
-    void initStack();
-
+    static void instructions::pushFunction(string);
 };
+#endif
