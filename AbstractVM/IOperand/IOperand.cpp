@@ -1,6 +1,6 @@
 #include "IOperand.hpp"
 
- string IOperand::toString() const // string that represents the instance
+string IOperand::toString() const // string that represents the instance
 {
     return _value;
 };

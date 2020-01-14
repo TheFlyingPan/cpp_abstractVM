@@ -12,8 +12,7 @@ typedef void (*voidfunc)();
 
 IO::IO()
 {
-    map<const string, voidfunc> mDict;
-    IO::mDict["push"] = &instructions::pushFunction("push");
+    map<const string, void> mDict;
 };
 
 IO::~IO()

@@ -11,9 +11,9 @@ class instructions
 private:
     /* data */
 public:
-    instructions::instructions();
-    instructions::~instructions();
+    instructions();
+    ~instructions();
     void commentsFunction();
-    static void instructions::pushFunction(string);
+    static void pushFunction(string);
 };
 #endif

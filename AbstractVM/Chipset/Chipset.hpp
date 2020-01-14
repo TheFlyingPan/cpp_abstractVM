@@ -5,10 +5,12 @@ using namespace std;
 
 class Chipset
 {
-    Chipset();
 public:
+    Chipset();
+    ~Chipset();
     static string getWords(string ligne);
     static string getVar(string ligne);
+
 };
 
 #endif
