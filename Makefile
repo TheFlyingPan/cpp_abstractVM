@@ -2,34 +2,35 @@ NAME	= abstractVM
 
 ar		= ar rc
 
-CXX		= g++ -std=c++11 -o $(NAME)
+CXX		= g++
 
 SRCS	=   main.cpp\
-			IOperand/IOperand.cpp\
-			IOperand/IOperand.hpp
+			AbstractVM/IO/IO.cpp\
+			AbstractVM/Chipset/Chipset.cpp\
+			AbstractVM/Memory/instructions.cpp
 
 OBJS := $(INPUT:.cpp.o)
 
-cxxflags.common := -Wall -Wextra -I./include
-cxxflags.debug := -g3 -D0
-cxxflags.tests := -fprofile-arcs -ftest-coverage
+# cxxflags.common := -Wall -Wextra -I./include
+# cxxflags.debug := -g3 -D0
+# cxxflags.tests := -fprofile-arcs -ftest-coverage
 
-LDFLAGS = 
-LDLIBS =
+# LDFLAGS = 
+# LDLIBS =
 
 all: tool
 
 tool: $(OBJS)
-    $(CXX) $(LDFLAGS) -o tool $(OBJS) $(LDLIBS)
+	$(CXX) $(SRCS)
 
-depend: .depend
+# depend: .depend
 
-.depend: $(SRCS)
-    $(RM) ./.depend
-    $(CXX) $(CPPFLAGS) -MM $^>>./.depend;
+# .depend: $(SRCS)
+#     $(RM) ./.depend
+#     $(CXX) $(CPPFLAGS) -MM $^>>./.depend;
 
 clean:
-    $(RM) $(OBJS)
+	$(RM) $(OBJS)
 
-distclean: clean
-    $(RM) *~ .depend
+# distclean: clean
+#     $(RM) *~ .depend

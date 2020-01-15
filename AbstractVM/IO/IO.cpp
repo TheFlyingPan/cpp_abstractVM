@@ -37,12 +37,13 @@ void IO::fromFile(const char* argv) const
             string str = Chipset::getWords(ligne);
             // it = mDict.find(str);
             if (mDict.find(str) == mDict.end()) {
-                std::cout << "not found" << endl;
+                std::cout << "not found\n" << endl;
             }
             else
             {
                 std::cout << "found: " << str << std::endl;
-                (this->mDict.find(str)->second("je suis dans la bonne fonction"));
+                (this->mDict.find(str)->second("je suis dans la bonne fonction")); // Mettre ici la sortie du parseur ( int32(x) )
+                std::cout << "\n" << std::endl;
             }
         }
         cout << ";;" << endl;
