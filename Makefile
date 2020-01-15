@@ -2,7 +2,7 @@ NAME	= abstractVM
 
 ar		= ar rc
 
-CXX		= g++
+CXX		= g++ -o abstractVM.bin
 
 SRCS	=   main.cpp\
 			AbstractVM/IO/IO.cpp\
