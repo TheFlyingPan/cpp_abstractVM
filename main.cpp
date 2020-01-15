@@ -3,7 +3,7 @@
 #include <fstream>
 #include "AbstractVM/IOperand/IOperand.hpp"
 #include "AbstractVM/Memory/instructions.hpp"
-#include "AbstractVM/IO/IO.cpp"
+#include "AbstractVM/IO/IO.hpp"
 
 
 using namespace std;

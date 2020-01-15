@@ -1,23 +1,15 @@
-#include <stack> 
-#include <iostream> 
-#include <map>
+#include <string>
+#include <iostream>
 #include "instructions.hpp"
 
 using namespace std;
 
-instructions::instructions()
-{}
-
-instructions::~instructions()
+void Instructions::commentsFunction(string m)
 {
-    //do nothing
+    cout << "commentFonction" << endl;
 }
 
-void instructions::commentsFunction()
+void Instructions::pushFunction(string m)
 {
-    cout << "bonsoir comment" << endl;
-}
-
-void instructions::pushFunction(string m){
-    cout << m << endl;
+    cout << "pushFonction" << endl;
 }

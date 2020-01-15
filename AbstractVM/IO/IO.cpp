@@ -3,39 +3,46 @@
 #include <sstream>
 #include <string>
 #include <map>
+
 #include "IO.hpp"
 #include "../Chipset/Chipset.hpp"
-#include "../Memory/instructions.cpp"
-
+#include "../Memory/instructions.hpp"
 using namespace std;
-typedef void (*voidfunc)();
 
 IO::IO()
 {
-    map<const string, void> mDict;
-};
+    this->mDict;
+    mDict.emplace(PUSH, &Instructions::pushFunction);
+    mDict.emplace(COMMENT, &Instructions::commentsFunction);
+    // std::map<std::string, void (*)(std::string)>::iterator it = mDict.begin();
+    // this->mDict[PUSH] = &Instructions::pushFunction;
+    // this->mDict[COMMENT] = &Instructions::commentsFunction;
+}
 
 IO::~IO()
 {
     //nothing
-};
+}
 
 void IO::fromFile(const char* argv) const
 {
-    string ligne;
+    std::map<std::string, void (*)(std::string)>::iterator it;
+    std::string ligne;
     ifstream monFlux(argv);  // Ouverture d'un fichier en lecture
     if(monFlux){
         //Lire le fichier et récupérer 
         while(getline(monFlux, ligne) && (ligne.find("exit") == string::npos)) //Tant qu'on n'est pas à la fin, on lit
         {
             std::cout << ligne << endl;
-            string it = Chipset::getWords(ligne);
-            if (mDict.find(it) == mDict.end()) {
+            string str = Chipset::getWords(ligne);
+            // it = mDict.find(str);
+            if (mDict.find(str) == mDict.end()) {
                 std::cout << "not found" << endl;
             }
             else
             {
-                std::cout << "found: " << it << endl;
+                std::cout << "found: " << str << std::endl;
+                (this->mDict.find(str)->second("je suis dans la bonne fonction"));
             }
         }
         cout << ";;" << endl;
@@ -45,7 +52,7 @@ void IO::fromFile(const char* argv) const
     {
         cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
     }
-};
+}
 
 void IO::fromInput() const
 {
@@ -65,4 +72,4 @@ void IO::fromInput() const
     }
     cout << ";;" << endl;
     cout << "result" << endl;
-};
+}

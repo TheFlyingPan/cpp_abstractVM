@@ -1,19 +1,15 @@
 #ifndef __INSTRUCTIONS_HPP__
-#define __INSTRUCTIONS_HPP__
-#include <stack> 
-#include <iostream> 
-#include <map>
+# define __INSTRUCTIONS_HPP__
+#include <string>
+#include <iostream>
 
-using namespace std;
-
-class instructions
+class Instructions
 {
 private:
     /* data */
 public:
-    instructions();
-    ~instructions();
-    void commentsFunction();
-    static void pushFunction(string);
+    static void commentsFunction(std::string);
+    static void pushFunction(std::string);
 };
+
 #endif
