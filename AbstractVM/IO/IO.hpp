@@ -8,7 +8,21 @@
 #include "../Memory/instructions.hpp"
 
 #define PUSH "push"
-#define COMMENT "comment"
+#define POP "pop"
+#define CLEAR "clear"
+#define DUP "dup"
+#define SWAP "swap"
+#define DUMP "dump"
+#define ASSERT "assert"
+#define ADD "add"
+#define SUB "sub"
+#define MUL "mul"
+#define DIV "div"
+#define MOD "mod"
+#define LOAD "load"
+#define STORE "store"
+#define PRINT "print"
+#define EXIT "exit"
 
 class IO
 {

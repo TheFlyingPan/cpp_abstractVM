@@ -13,7 +13,21 @@ IO::IO()
 {
     this->mDict;
     mDict.emplace(PUSH, &Instructions::pushFunction);
-    mDict.emplace(COMMENT, &Instructions::commentsFunction);
+    mDict.emplace(POP, &Instructions::popFunction);
+    mDict.emplace(CLEAR, &Instructions::clearFunction);
+    mDict.emplace(DUP, &Instructions::dupFunction);
+    mDict.emplace(SWAP, &Instructions::swapFunction);
+    mDict.emplace(DUMP, &Instructions::dumpFunction);
+    mDict.emplace(ASSERT, &Instructions::assertFunction);
+    mDict.emplace(ADD, &Instructions::addFunction);
+    mDict.emplace(SUB, &Instructions::subFunction);
+    mDict.emplace(MUL, &Instructions::mulFunction);
+    mDict.emplace(DIV, &Instructions::divFunction);
+    mDict.emplace(MOD, &Instructions::modFunction);
+    mDict.emplace(LOAD, &Instructions::loadFunction);
+    mDict.emplace(STORE, &Instructions::storeFunction);
+    mDict.emplace(PRINT, &Instructions::printFunction);
+    mDict.emplace(EXIT, &Instructions::exitFunction);
     // std::map<std::string, void (*)(std::string)>::iterator it = mDict.begin();
     // this->mDict[PUSH] = &Instructions::pushFunction;
     // this->mDict[COMMENT] = &Instructions::commentsFunction;

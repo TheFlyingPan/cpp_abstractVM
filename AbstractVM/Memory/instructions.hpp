@@ -8,8 +8,22 @@ class Instructions
 private:
     /* data */
 public:
-    static void commentsFunction(std::string);
     static void pushFunction(std::string);
+    static void popFunction(std::string);
+    static void clearFunction(std::string);
+    static void dupFunction(std::string);
+    static void swapFunction(std::string);
+    static void dumpFunction(std::string);
+    static void assertFunction(std::string);
+    static void addFunction(std::string);
+    static void subFunction(std::string);
+    static void mulFunction(std::string);
+    static void divFunction(std::string);
+    static void modFunction(std::string);
+    static void loadFunction(std::string);
+    static void storeFunction(std::string);
+    static void printFunction(std::string);
+    static void exitFunction(std::string);
 };
 
 #endif
