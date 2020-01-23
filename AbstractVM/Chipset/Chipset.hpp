@@ -10,7 +10,8 @@ public:
     ~Chipset();
     static string getWords(string ligne);
     static string getVar(string ligne);
-
+    static string getVal(string ligne);
+    static string getNumber(string ligne);
 };
 
 #endif

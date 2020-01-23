@@ -55,8 +55,8 @@ void IO::fromFile(const char* argv) const
             }
             else
             {
-                std::cout << "found: " << str << std::endl;
-                (this->mDict.find(str)->second("je suis dans la bonne fonction")); // Mettre ici la sortie du parseur ( int32(x) )
+                // std::cout << "found: " << str << std::endl;
+                (this->mDict.find(str)->second(Chipset::getWords(str))); // Mettre ici la sortie du parseur ( int32(x) )
                 std::cout << "\n" << std::endl;
             }
         }
@@ -82,7 +82,9 @@ void IO::fromInput() const
             }
             else
             {
-                std::cout << "found: " << it << endl;
+                // std::cout << "found: " << it << endl;
+                (this->mDict.find(it)->second(Chipset::getNumber(ligne))); // Mettre ici la sortie du parseur ( int32(x) )
+                // std::cout << "\n" << std::endl;
             }
     }
     cout << ";;" << endl;

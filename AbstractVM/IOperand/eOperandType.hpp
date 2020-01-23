@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 
-#ifndef __EOperand_HPP__
-#define __EOperand_HPP__
+#ifndef __EOPERANDTYPE_HPP__
+#define __EOPERANDTYPE_HPP__
 
 enum class eOperandType
 {

@@ -1,12 +1,15 @@
 #include <string>
 #include <iostream>
 #include "instructions.hpp"
+#include "../Chipset/Chipset.hpp"
 
 using namespace std;
 
 void Instructions::pushFunction(string m)
 {
-    cout << "pushFonction" << endl;
+    cout << "je suis dans Instructions::pushFonction, valeur d'entrée: " << m << endl;
+    cout << Chipset::getVar(m) << " -> à envoyer dans le type de la variable" << endl;
+    cout << Chipset::getVal(m) << " -> à envoyer dans la valeur à ioperand" << endl;
 }
 
 void Instructions::popFunction(string m)
