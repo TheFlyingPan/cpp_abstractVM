@@ -37,6 +37,7 @@ IOperand* operatorMod( const IOperand& rhs ) // modulo
 
 IOperand* createInt8(const string& value)
 {
+    
     cout << "je suis dans createInt8" << endl;
     return 0;
 }
