@@ -4,9 +4,6 @@
 #include <string>
 #include <iostream>
 
-#include "../Chipset/Chipset.hpp"
-#include "../Chipset/instructions.hpp"
-
 #define PUSH "push"
 #define POP "pop"
 #define CLEAR "clear"

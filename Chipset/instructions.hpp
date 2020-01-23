@@ -2,8 +2,9 @@
 # define __INSTRUCTIONS_HPP__
 #include <string>
 #include <iostream>
+#include "Chipset.hpp"
 
-class Instructions
+class Instructions: public Chipset
 {
 private:
     /* data */

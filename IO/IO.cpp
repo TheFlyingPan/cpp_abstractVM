@@ -73,6 +73,8 @@ void IO::fromInput() const
 {
      //lire le programme et récupérer ligne via cmd
             //A RAJOUTER DANS CLASSE I/O
+            // Faire liste des commandes et executer quand il rencontre ";;"
+            // Et erreur si exit avant ";;"
     string ligne;
     while(ligne.find("exit") == string::npos){
         getline(cin, ligne);

@@ -1,9 +1,10 @@
 #ifndef __CHIPSET_HPP__
 #define __CHIPSET_HPP__
+#include "../IO/IO.hpp"
 
 using namespace std;
 
-class Chipset
+class Chipset: public IO
 {
 public:
     Chipset();

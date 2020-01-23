@@ -1,11 +1,11 @@
 #include <iostream>
 #include <list>
 #include <iterator>
-#include "../IOperand/IOperand.hpp"
+#include "RAM.hpp"
 
 using namespace std;
 
-class Stack : public IOperand
+class Stack : public RAM
 {
     public:
     Stack();
