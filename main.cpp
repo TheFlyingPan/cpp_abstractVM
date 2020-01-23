@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "AbstractVM/IOperand/IOperand.hpp"
-#include "AbstractVM/Memory/instructions.hpp"
-#include "AbstractVM/IO/IO.hpp"
+#include "CPU/IOperand.hpp"
+#include "Chipset/instructions.hpp"
+#include "IO/IO.hpp"
 
 
 using namespace std;

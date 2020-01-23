@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include "instructions.hpp"
-#include "../Chipset/Chipset.hpp"
+#include "Chipset.hpp"
 
 using namespace std;
 

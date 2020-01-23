@@ -4,7 +4,7 @@
 #include <string>
 #include "Chipset.hpp"
 #include "../IO/IO.hpp"
-#include "../Memory/instructions.hpp"
+#include "instructions.hpp"
 
 using namespace std;
 

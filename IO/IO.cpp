@@ -6,7 +6,7 @@
 
 #include "IO.hpp"
 #include "../Chipset/Chipset.hpp"
-#include "../Memory/instructions.hpp"
+#include "../Chipset/instructions.hpp"
 using namespace std;
 
 IO::IO()

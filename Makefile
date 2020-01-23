@@ -2,12 +2,12 @@ NAME	= abstractVM
 
 ar		= ar rc
 
-CXX		= g++ -o abstractVM.bin
+CXX		= g++ -o abstractVM
 
 SRCS	=   main.cpp\
-			AbstractVM/IO/IO.cpp\
-			AbstractVM/Chipset/Chipset.cpp\
-			AbstractVM/Memory/instructions.cpp
+			IO/IO.cpp\
+			Chipset/Chipset.cpp\
+			Chipset/instructions.cpp
 
 OBJS := $(INPUT:.cpp.o)
 
