@@ -20,7 +20,8 @@ OBJS := $(INPUT:.cpp.o)
 
 all: tool
 
-tool: $(OBJS)
+tool:
+	$(OBJS)
 	$(CXX) $(SRCS)
 
 # depend: .depend
@@ -31,6 +32,5 @@ tool: $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
-
 # distclean: clean
 #     $(RM) *~ .depend

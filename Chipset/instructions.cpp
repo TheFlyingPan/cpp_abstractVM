@@ -2,6 +2,9 @@
 #include <iostream>
 #include "instructions.hpp"
 #include "Chipset.hpp"
+#include "../CPU/IOperand.hpp"
+#include "../CPU/eOperandType.hpp"
+#include "../CPU/Factory.hpp"
 
 using namespace std;
 
@@ -10,6 +13,8 @@ void Instructions::pushFunction(string m)
     cout << "je suis dans Instructions::pushFonction, valeur d'entrée: " << m << endl;
     cout << getVar(m) << " -> à envoyer dans le type de la variable" << endl;
     cout << getVal(m) << " -> à envoyer dans la valeur à ioperand" << endl;
+    eOperandType getType(getVar(m));
+    Factory::createOperand(type, getVal(m));
 }
 
 void Instructions::popFunction(string m)

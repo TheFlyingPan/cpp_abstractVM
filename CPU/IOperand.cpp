@@ -1,4 +1,5 @@
 #include "IOperand.hpp"
+#include "eOperandType.hpp"
 
 string IOperand::toString() const // string that represents the instance
 {

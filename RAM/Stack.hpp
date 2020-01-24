@@ -2,6 +2,7 @@
 #include <list>
 #include <iterator>
 #include "RAM.hpp"
+#include "../CPU/IOperand.hpp"
 
 using namespace std;
 
