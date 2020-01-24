@@ -6,31 +6,30 @@
 
 #include "IO.hpp"
 #include "../Chipset/Chipset.hpp"
-#include "../Chipset/instructions.hpp"
 using namespace std;
 
 IO::IO()
 {
     this->mDict;
-    mDict.emplace(PUSH, &Instructions::pushFunction);
-    mDict.emplace(POP, &Instructions::popFunction);
-    mDict.emplace(CLEAR, &Instructions::clearFunction);
-    mDict.emplace(DUP, &Instructions::dupFunction);
-    mDict.emplace(SWAP, &Instructions::swapFunction);
-    mDict.emplace(DUMP, &Instructions::dumpFunction);
-    mDict.emplace(ASSERT, &Instructions::assertFunction);
-    mDict.emplace(ADD, &Instructions::addFunction);
-    mDict.emplace(SUB, &Instructions::subFunction);
-    mDict.emplace(MUL, &Instructions::mulFunction);
-    mDict.emplace(DIV, &Instructions::divFunction);
-    mDict.emplace(MOD, &Instructions::modFunction);
-    mDict.emplace(LOAD, &Instructions::loadFunction);
-    mDict.emplace(STORE, &Instructions::storeFunction);
-    mDict.emplace(PRINT, &Instructions::printFunction);
-    mDict.emplace(EXIT, &Instructions::exitFunction);
+    mDict.emplace(PUSH, &Chipset::pushFunction);
+    mDict.emplace(POP, &Chipset::popFunction);
+    mDict.emplace(CLEAR, &Chipset::clearFunction);
+    mDict.emplace(DUP, &Chipset::dupFunction);
+    mDict.emplace(SWAP, &Chipset::swapFunction);
+    mDict.emplace(DUMP, &Chipset::dumpFunction);
+    mDict.emplace(ASSERT, &Chipset::assertFunction);
+    mDict.emplace(ADD, &Chipset::addFunction);
+    mDict.emplace(SUB, &Chipset::subFunction);
+    mDict.emplace(MUL, &Chipset::mulFunction);
+    mDict.emplace(DIV, &Chipset::divFunction);
+    mDict.emplace(MOD, &Chipset::modFunction);
+    mDict.emplace(LOAD, &Chipset::loadFunction);
+    mDict.emplace(STORE, &Chipset::storeFunction);
+    mDict.emplace(PRINT, &Chipset::printFunction);
+    mDict.emplace(EXIT, &Chipset::exitFunction);
     // std::map<std::string, void (*)(std::string)>::iterator it = mDict.begin();
-    // this->mDict[PUSH] = &Instructions::pushFunction;
-    // this->mDict[COMMENT] = &Instructions::commentsFunction;
+    // this->mDict[PUSH] = &Chipset::pushFunction;
+    // this->mDict[COMMENT] = &Chipset::commentsFunction;
 }
 
 IO::~IO()

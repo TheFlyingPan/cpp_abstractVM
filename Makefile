@@ -7,7 +7,6 @@ CXX		= g++ -o abstractVM
 SRCS	=   main.cpp\
 			IO/IO.cpp\
 			Chipset/Chipset.cpp\
-			Chipset/instructions.cpp
 
 OBJS := $(INPUT:.cpp.o)
 
