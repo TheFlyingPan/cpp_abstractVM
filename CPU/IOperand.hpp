@@ -19,7 +19,7 @@ public:
     virtual IOperand* operatorDiv( const IOperand& rhs ) const = 0; // quotient
     virtual IOperand* operatorMod( const IOperand& rhs ) const = 0; // modulo
     
-    virtual ~IOperand() {}
+    virtual ~IOperand() {};
 private:
     eOperandType _type;
     string _value;

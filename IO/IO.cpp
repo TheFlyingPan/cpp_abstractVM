@@ -6,6 +6,7 @@
 
 #include "IO.hpp"
 #include "../Chipset/Chipset.hpp"
+
 using namespace std;
 
 IO::IO()
@@ -27,9 +28,6 @@ IO::IO()
     mDict.emplace(STORE, &Chipset::storeFunction);
     mDict.emplace(PRINT, &Chipset::printFunction);
     mDict.emplace(EXIT, &Chipset::exitFunction);
-    // std::map<std::string, void (*)(std::string)>::iterator it = mDict.begin();
-    // this->mDict[PUSH] = &Chipset::pushFunction;
-    // this->mDict[COMMENT] = &Chipset::commentsFunction;
 }
 
 IO::~IO()
@@ -37,7 +35,7 @@ IO::~IO()
     //nothing
 }
 
-void IO::fromFile(const char* argv) const
+void IO::fromFile(const char* argv)
 {
     std::map<std::string, void (*)(std::string)>::iterator it;
     std::string ligne;
@@ -48,15 +46,16 @@ void IO::fromFile(const char* argv) const
         {
             std::cout << ligne << endl;
             string str = Chipset::getWords(ligne);
-            // it = mDict.find(str);
             if (mDict.find(str) == mDict.end()) {
                 std::cout << "not found\n" << endl;
             }
             else
             {
                 // std::cout << "found: " << str << std::endl;
-                (this->mDict.find(str)->second(Chipset::getWords(str))); // Mettre ici la sortie du parseur ( int32(x) )
-                std::cout << "\n" << std::endl;
+                //(this->mDict.find(str)->second(myChipset.getWords(str))); // Mettre ici la sortie du parseur ( int32(x) )
+                std::map<std::string, void (Chipset::*)(std::string)>::iterator iter = this->mDict.find(str);
+                void (Chipset::*func)(std::string) = iter->second;
+                (myChipset.*func)(myChipset.getNumber(ligne));
             }
         }
         cout << ";;" << endl;
@@ -68,7 +67,7 @@ void IO::fromFile(const char* argv) const
     }
 }
 
-void IO::fromInput() const
+void IO::fromInput()
 {
      //lire le programme et récupérer ligne via cmd
             //A RAJOUTER DANS CLASSE I/O
@@ -77,15 +76,18 @@ void IO::fromInput() const
     string ligne;
     while(ligne.find("exit") == string::npos){
         getline(cin, ligne);
-        string it = Chipset::getWords(ligne);
-        if (mDict.find(it) == mDict.end()) {
+        string str = Chipset::getWords(ligne);
+        if (mDict.find(str) == mDict.end()) {
                 std::cout << "not found" << endl;
             }
             else
             {
                 // std::cout << "found: " << it << endl;
-                (this->mDict.find(it)->second(Chipset::getNumber(ligne))); // Mettre ici la sortie du parseur ( int32(x) )
+                //(this->mDict.find(it)->second(myChipset.getNumber(ligne))); // Mettre ici la sortie du parseur ( int32(x) )
                 // std::cout << "\n" << std::endl;
+                std::map<std::string, void (Chipset::*)(std::string)>::iterator iter = this->mDict.find(str);
+                void (Chipset::*func)(std::string) = iter->second;
+                (myChipset.*func)(myChipset.getNumber(ligne));
             }
     }
     cout << ";;" << endl;

@@ -1,5 +1,5 @@
-#include "RAM.hpp"
 #include <iostream>
+#include "RAM.hpp"
 
 RAM::RAM()
 {

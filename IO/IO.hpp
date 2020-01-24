@@ -3,6 +3,7 @@
 #include <map>
 #include <string>
 #include <iostream>
+#include "../Chipset/Chipset.hpp"
 
 #define PUSH "push"
 #define POP "pop"
@@ -24,16 +25,13 @@
 class IO
 {
 private:
-    std::map<std::string, void (*)(std::string)> mDict;
-    // typedef void (*voidfunc)();
-    // map<const string, voidfunc> mDict;
-    //     mDict["push"] = (voidfunc) &(Instruction);
-    //     mDict["comment"] = (voidfunc) &bar;
+    std::map<std::string, void (Chipset::*)(std::string)> mDict;
+    Chipset myChipset;
 public:
     IO();
     virtual ~IO();
-    void fromFile(const char* argv) const;
-    void fromInput() const;
+    void fromFile(const char* argv);
+    void fromInput();
 };
 
 #endif

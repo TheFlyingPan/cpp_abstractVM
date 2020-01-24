@@ -13,12 +13,12 @@ using namespace std;
 Chipset::Chipset()
 {
 
-};
+}
 
 Chipset::~Chipset()
 {
     
-};
+}
 
 string Chipset::getWords(string ligne)
 {
@@ -30,7 +30,7 @@ string Chipset::getWords(string ligne)
         i++;
     }
     return arr[0];
-};
+}
 
 string Chipset::getNumber(string ligne)
 {
@@ -74,10 +74,10 @@ string Chipset::getVal(string ligne)
 
 void Chipset::pushFunction(string m)
 {
-    cout << "je suis dans Chipset::pushFonction, valeur d'entrée: " << m << endl;
+    cout << "je suis dans Chipset::pushFonction, valeur d'entree: " << m << endl;
     cout << getVar(m) << " -> à envoyer dans le type de la variable" << endl;
     cout << getVal(m) << " -> à envoyer dans la valeur à ioperand" << endl;
-    
+    this->myRam.stackMem.push_back(9);
 }
 
 void Chipset::popFunction(string m)
