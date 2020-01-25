@@ -28,24 +28,7 @@
 ```
 //std::map <key_type, data_type, [comparison_function]>
 
-//Template A - not working
-//std::map <string, char> grade_list;
-//grade_list["John"] = 'A';
-//grade_list["Jack"] = 'B';
-//grade_list["Paul"] = 'C';
-// Should be John
-//std::cout<<grade_list.begin()->first<<endl;
-// Should be A
-//std::cout<<grade_list.begin()->second<<endl;
-
-//TEMPLATE B - working
-/* map <string, string> instructionsCmd = {
-            {"a", "1"},
-            {"b", "2"},
-            {"c", "3"},
-            }; */
-```
-
+### Template HEADER
 ```
 #ifndef __CHIPSET_HPP__
 #define __CHIPSET_HPP__
