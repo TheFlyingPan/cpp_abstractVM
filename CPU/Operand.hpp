@@ -1,29 +1,22 @@
-#include <iostream>
 #include <string>
+#include "../Chipset/Chipset.hpp"
+#include "IOperand.hpp"
 
-#ifndef __IOperand_HPP__
-#define __IOperand_HPP__
-
-using namespace std;
+#ifndef __Operand_HPP__
+#define __Operand_HPP__
 
 
-class IOperand
+class Operand: public IOperand
 {
+private:
+    eOperandType _type;
+    string _value;
 public:
-    enum class eOperandType
-    {
-        INT8,
-        INT16,
-        INT32,
-        FLOAT,
-        DOUBLE,
-        BIGDECIMAL
-    };
-
-    virtual eOperandType createTypeViaString(std::string str);
+    Operand();
+    eOperandType createTypeViaString(std::string str);
     virtual string toString() const = 0; // string that represents the instance
     virtual eOperandType getType() const = 0; // returns the type of instance
-    
+
     virtual IOperand* operator+( const IOperand& rhs ) const = 0; // sum
     virtual IOperand* operator-( const IOperand& rhs ) const = 0; // difference
     virtual IOperand* operator*( const IOperand& rhs ) const = 0; // product
@@ -32,4 +25,3 @@ public:
 };
 
 #endif
-

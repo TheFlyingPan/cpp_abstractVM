@@ -51,14 +51,11 @@ void IO::fromFile(const char* argv)
             }
             else
             {
-                // std::cout << "found: " << str << std::endl;
-                //(this->mDict.find(str)->second(myChipset.getWords(str))); // Mettre ici la sortie du parseur ( int32(x) )
                 std::map<std::string, void (Chipset::*)(std::string)>::iterator iter = this->mDict.find(str);
                 void (Chipset::*func)(std::string) = iter->second;
                 (myChipset.*func)(myChipset.getNumber(ligne));
             }
         }
-        cout << ";;" << endl;
         cout << "resultFichier" << endl;
     }
     else
@@ -90,6 +87,5 @@ void IO::fromInput()
                 (myChipset.*func)(myChipset.getNumber(ligne));
             }
     }
-    cout << ";;" << endl;
     cout << "result" << endl;
 }

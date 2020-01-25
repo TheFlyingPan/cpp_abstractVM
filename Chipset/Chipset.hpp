@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include "../RAM/RAM.hpp"
+#include "../CPU/Operand.hpp"
 
 
 using namespace std;
@@ -14,7 +15,7 @@ public:
     Chipset();
     ~Chipset();
     static string getWords(string ligne);
-    static string getVar(string ligne);
+    static string getVarType(string ligne);
     static string getVal(string ligne);
     static string getNumber(string ligne);
     void pushFunction(std::string);

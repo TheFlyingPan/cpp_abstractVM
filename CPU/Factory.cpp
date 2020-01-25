@@ -2,37 +2,29 @@
 
 using namespace std;
 
-Factory::Factory()
+static IOperand* createOperand(Operand::eOperandType type, const string& value)
 {
-};
-
-Factory::~Factory()
-{
-};
-
-static IOperand* createOperand(eOperandType type, const string& value)
-{
-    if(type == eOperandType::Int8)
+    if(type == Operand::eOperandType::INT8)
     {
         IOperand* createInt8(const string& value);
     }
-    if(type == eOperandType::Int16)
+    if(type == Operand::eOperandType::INT16)
     {
         IOperand* createInt16(const string& value);
     }
-    if(type == eOperandType::Int32)
+    if(type == Operand::eOperandType::INT32)
     {
         IOperand* createInt32(const string& value);
     }
-    if(type == eOperandType::Float)
+    if(type == Operand::eOperandType::FLOAT)
     {
         IOperand* createFloat(const string& value);
     }
-    if(type == eOperandType::Double)
+    if(type == Operand::eOperandType::DOUBLE)
     {
         IOperand* createDouble(const string& value);
     }
-    if(type == eOperandType::BigDecimal)
+    if(type == Operand::eOperandType::BIGDECIMAL)
     {
         IOperand* createBigDecimal(const string& value);
     }

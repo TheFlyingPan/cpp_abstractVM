@@ -10,8 +10,8 @@ class RAM
     public:
         RAM();
         ~RAM();
-
-    std::list<int> stackMem;
+    //  std::list<IOperand *> stackMem;
+        std::list<int> stackMem;
 };
 
 #endif
