@@ -11,7 +11,9 @@ class RAM
         RAM();
         ~RAM();
     //  std::list<IOperand *> stackMem;
-        std::list<int> stackMem;
+        std::list<double> stackMem;
+        std::string resType;
+        std::string myRegister[16];
 };
 
 #endif

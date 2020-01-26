@@ -11,5 +11,5 @@ std::string Int8::toString() const
 
 IOperand::eOperandType Int8::getType() const
 {
-    return _type;
+    return IOperand::eOperandType::INT8;
 }

@@ -1,7 +1,7 @@
 #include "Operand.hpp"
 #include "IOperand.hpp"
 #include "Int8.hpp"
-
+#include <memory>
 
 IOperand::eOperandType Operand::createTypeViaString(std::string str)
 {
@@ -50,6 +50,7 @@ IOperand* operatorMod( const IOperand& rhs ) // modulo
 IOperand* createInt8(const string& value)
 {
     cout << "je suis dans createInt8" << endl;
+    // IOperand *ptr = new std::unique_ptr>
 }
 
 IOperand* createInt16(const string& value)

@@ -8,6 +8,8 @@ SRCS	=   main.cpp\
 			IO/IO.cpp\
 			Chipset/Chipset.cpp\
 			RAM/RAM.cpp\
+			# CPU/Factory.cpp\
+			# CPU/Operand.cpp\
 
 OBJS := $(INPUT:.cpp.o)
 

@@ -10,6 +10,8 @@
 #include "../CPU/Factory.hpp"
 #include "../CPU/Int8.hpp"
 
+// #define INT8 "int8"
+
 using namespace std;
 
 Chipset::Chipset()
@@ -77,18 +79,20 @@ void Chipset::pushFunction(string m)
     string enumType[6] = {"int8","int16","int32","float","double","bigdecimal"};
     string type = getVarType(m);
     int i = 0;
-       if(type.compare(enumType[i]) == 0 )
-        {
-            cout << "je suis dans Chipset::pushFonction, valeur d'entree: " << m << endl;
-            cout << getVarType(m) << " -> à envoyer dans le type de la variable" << endl;
-            cout << getVal(m) << " -> à envoyer dans la valeur à ioperand" << endl;
-            this->myRam.stackMem.push_back(9);
+    while (type.compare(enumType[i]) != 0) {
+       if (i > 5) {
+           std::cerr << "Error: type '" << type << "' non-existent" << endl;
+            // cout << "je suis dans Chipset::pushFonction, valeur d'entree: " << m << endl;
+            // cout << getVarType(m) << " -> à envoyer dans le type de la variable" << endl;
+            // cout << getVal(m) << " -> à envoyer dans la valeur à ioperand" << endl;
+            // this->myRam.stackMem.push_back(std::stod(getVal(m)));
         }
-        else
-        {
-            std::cerr << "Error: no type known" << endl;
-        }
-    
+        i++;
+    }
+    if (i <= 5) {
+        this->myRam.stackMem.push_front(std::stod(getVal(m)));
+    }
+
     
 }
 
@@ -115,9 +119,9 @@ void Chipset::dupFunction(string m)
 
 void Chipset::swapFunction(string m)
 {
-    std::list<int>::iterator iter; 
+    std::list<double>::iterator iter; 
     iter = this->myRam.stackMem.begin();
-    std::list<int>::iterator it1 = iter++;
+    std::list<double>::iterator it1 = iter++;
     cout << "swapFonction" << endl;
     //this->myRam.stackMem.swap(it1, iter);
 }
@@ -125,10 +129,10 @@ void Chipset::swapFunction(string m)
 void Chipset::dumpFunction(string m)
 {
     cout << "dumpFonction" << endl;
-    std::list<int> list = this->myRam.stackMem;
+    std::list<double> list = this->myRam.stackMem;
     if(!list.empty())
     {
-        std::list<int>::iterator IterateurListe; // Construction d’un itérateur pour parcourir les éléments de la liste
+        std::list<double>::iterator IterateurListe; // Construction d’un itérateur pour parcourir les éléments de la liste
         for(IterateurListe=list.begin();IterateurListe!=list.end();IterateurListe++)
         {
             std::cout << (*IterateurListe) << std::endl;
@@ -147,7 +151,12 @@ void Chipset::assertFunction(string m)
 
 void Chipset::addFunction(string m)
 {
-    cout << "addFonction" << endl;
+    double val1 = this->myRam.stackMem.front();
+    this->myRam.stackMem.pop_front();
+    double val2 = this->myRam.stackMem.front();
+    double res = val1 + val2;
+    this->myRam.stackMem.push_front(res);
+    cout << res << endl;
 }
 
 void Chipset::subFunction(string m)
@@ -172,17 +181,39 @@ void Chipset::modFunction(string m)
 
 void Chipset::loadFunction(string m)
 {
-    cout << "loadFonction" << endl;
+    int i = 0;
+    while (myRam.myRegister[i].compare(m) != 0 && i < 17) {
+        i++;
+    }
+    if (i <= 15) {
+        this->myRam.stackMem.push_front(stod(Chipset::getVal(m)));
+    } else {
+        cerr << "Error: The value you asked for doesn't exist" << endl;
+    }
 }
 
 void Chipset::storeFunction(string m)
 {
-    cout << "storeFonction" << endl;
+    int i = 0;
+    while (myRam.myRegister[i].compare("") != 0 && i < 17) {
+        i++;
+    }
+    if (i <= 15) {
+        myRam.myRegister[i] = m;
+    } else {
+        cerr << "Error: The register is full" << endl;
+    }
+    
 }
 
 void Chipset::printFunction(string m)
 {
-    cout << "printFonction" << endl;
+    // std::list<double>::const_iterator it = this->myRam.stackMem.begin();
+    // while (it != this->myRam.stackMem.end()){
+    //     cout << this->myRam.stackMem.front() << endl;
+    //     this->myRam.stackMem.pop_front();
+    //     it++;
+    // }
 }
 
 void Chipset::exitFunction(string m)

@@ -56,7 +56,6 @@ void IO::fromFile(const char* argv)
                 (myChipset.*func)(myChipset.getNumber(ligne));
             }
         }
-        cout << "resultFichier" << endl;
     }
     else
     {
@@ -70,22 +69,48 @@ void IO::fromInput()
             //A RAJOUTER DANS CLASSE I/O
             // Faire liste des commandes et executer quand il rencontre ";;"
             // Et erreur si exit avant ";;"
+    std::list<std::string> cmdList;
     string ligne;
     while(ligne.find("exit") == string::npos){
         getline(cin, ligne);
-        string str = Chipset::getWords(ligne);
-        if (mDict.find(str) == mDict.end()) {
-                std::cout << "not found" << endl;
-            }
-            else
-            {
-                // std::cout << "found: " << it << endl;
-                //(this->mDict.find(it)->second(myChipset.getNumber(ligne))); // Mettre ici la sortie du parseur ( int32(x) )
-                // std::cout << "\n" << std::endl;
+        cmdList.push_back(ligne);
+    }
+    cmdList.push_back(ligne);
+    // cout << cmdList.back() << endl;
+    // cout << ligne << " exit" << endl;
+    getline(cin, ligne);
+    // cout << ligne << "  ;;" << endl;
+    if (ligne.compare(";;") != 0) {
+        std::cerr << "Error: exit must be followed by ;;" << endl;
+    } else {
+        std::string line = cmdList.front();
+        while (line.compare("exit") != 0) {
+            std::string str = Chipset::getWords(line);
+            if (mDict.find(str) == mDict.end()) {
+                std::cerr << "Error: command '" << str << "' not found" << endl;
+                cmdList.pop_front();
+            } else {
                 std::map<std::string, void (Chipset::*)(std::string)>::iterator iter = this->mDict.find(str);
                 void (Chipset::*func)(std::string) = iter->second;
-                (myChipset.*func)(myChipset.getNumber(ligne));
+                (myChipset.*func)(Chipset::getNumber(line));
+                cmdList.pop_front();
             }
+            line = cmdList.front();
+        }
     }
-    cout << "result" << endl;
 }
+
+// string str = Chipset::getWords(ligne);
+//         if (mDict.find(str) == mDict.end()) {
+//                 std::cout << "not found" << endl;
+//             }
+//             else
+//             {
+//                 // std::cout << "found: " << it << endl;
+//                 // (this->mDict.find(it)->second(myChipset.getNumber(ligne))); // Mettre ici la sortie du parseur ( int32(x) )
+//                 // std::cout << "\n" << std::endl;
+
+//                 std::map<std::string, void (Chipset::*)(std::string)>::iterator iter = this->mDict.find(str);
+//                 void (Chipset::*func)(std::string) = iter->second;
+//                 (myChipset.*func)(myChipset.getNumber(ligne));
+//             }
